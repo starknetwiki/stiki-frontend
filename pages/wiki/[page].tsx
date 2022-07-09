@@ -2,12 +2,12 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import BackToHome from "../../components/BackToHome";
+import _ from "lodash";
 
 const Page: NextPage = () => {
   const router = useRouter();
   const { page } = router.query;
 
-  console.log("page", page);
   return (
     <div className="bg-primary-900 w-screen h-screen fixed inset-0 text-primary-100 pt-8">
       <Head>
@@ -20,7 +20,9 @@ const Page: NextPage = () => {
       </Head>
 
       <main className="max-w-4xl mx-auto h-full">
-        <h1 className="text-secondary-400 text-6xl mx-auto w-fit">{page}</h1>
+        <h1 className="text-secondary-400 text-6xl mx-auto w-fit">
+          {_.startCase(typeof page === "string" ? page : "")}
+        </h1>
         <BackToHome />
         <div className="grid grid-cols-2 gap-8 mt-20 justify-items-center"></div>
       </main>

@@ -2,6 +2,7 @@ import { useStarknet } from "@starknet-react/core";
 import type { NextPage } from "next";
 import Head from "next/head";
 import PageLink from "../components/PageLink";
+import _ from "lodash";
 
 const mockPages = [
   "Lose Yourself",
@@ -32,7 +33,11 @@ const Home: NextPage = () => {
         <h1 className="text-secondary-400 text-6xl mx-auto w-fit">Stiki</h1>
         <div className="grid grid-cols-2 gap-8 mt-20 justify-items-center">
           {mockPages.map((page) => (
-            <PageLink name={page} key={page} href="/" />
+            <PageLink
+              name={page}
+              key={page}
+              href={`/wiki/${_.kebabCase(page)}`}
+            />
           ))}
         </div>
       </main>
