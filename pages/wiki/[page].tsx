@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import { useRouter } from "next/router";
+import BackToHome from "../../components/BackToHome";
 
 const Page: NextPage = () => {
   const router = useRouter();
@@ -20,7 +21,7 @@ const Page: NextPage = () => {
 
       <main className="max-w-4xl mx-auto h-full">
         <h1 className="text-secondary-400 text-6xl mx-auto w-fit">{page}</h1>
-
+        <BackToHome />
         <div className="grid grid-cols-2 gap-8 mt-20 justify-items-center"></div>
       </main>
     </div>
