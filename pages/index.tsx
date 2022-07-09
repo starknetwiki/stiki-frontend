@@ -1,3 +1,4 @@
+import { useStarknet } from "@starknet-react/core";
 import type { NextPage } from "next";
 import Head from "next/head";
 import PageLink from "../components/PageLink";
