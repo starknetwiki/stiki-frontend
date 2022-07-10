@@ -5,6 +5,7 @@ import PageLink from "../components/PageLink";
 import _ from "lodash";
 import useGetList from "../utils/queries/useGetList";
 import usePostAddStiki from "../utils/queries/usePostAddStiki";
+import * as React from "react";
 
 const mockPages = [
   "Lose Yourself",
@@ -20,8 +21,12 @@ const mockPages = [
 ];
 
 const Home: NextPage = () => {
-  const { status, data } = useGetList();
+  const list = useGetList();
   const { mutate: addStiki } = usePostAddStiki();
+
+  React.useEffect(() => {
+    console.log(list);
+  }, [list]);
 
   const handleAddDummyStiki = () => {
     addStiki({

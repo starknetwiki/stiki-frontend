@@ -6,7 +6,7 @@ export const usePostAddStiki = (): any => {
     body: string;
     refs: Record<string, string>;
   }) => {
-    return api.post(`/add-stiki`, bodyParams);
+    return api.post(`/add-stiki`, { ...bodyParams, pinned: true });
   };
 
   const relationMutation = useMutation(addStikiMutationFn);
