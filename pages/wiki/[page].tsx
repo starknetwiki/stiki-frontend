@@ -11,7 +11,9 @@ const Page: NextPage = () => {
   return (
     <div className="bg-primary-900 w-screen h-screen fixed inset-0 text-primary-100 pt-8">
       <Head>
-        <title>{page} - Stiki</title>
+        <title>
+          {_.startCase(typeof page === "string" ? page : "")} - Stiki
+        </title>
         <meta
           name="description"
           content="Page of Stiki, the decentralized game wiki"
@@ -19,8 +21,8 @@ const Page: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="max-w-4xl mx-auto h-full">
-        <h1 className="text-secondary-400 text-6xl mx-auto w-fit">
+      <main className="max-w-4xl mx-auto h-full flex flex-col items-center">
+        <h1 className="text-secondary-400 text-6xl w-fit mb-4">
           {_.startCase(typeof page === "string" ? page : "")}
         </h1>
         <BackToHome />

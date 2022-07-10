@@ -29,8 +29,8 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="max-w-4xl mx-auto h-full">
-        <h1 className="text-secondary-400 text-6xl mx-auto w-fit">Stiki</h1>
+      <main className="max-w-4xl mx-auto h-full flex flex-col items-center">
+        <h1 className="text-secondary-400 text-6xl  w-fit">Stiki</h1>
         <div className="grid grid-cols-2 gap-8 mt-20 justify-items-center">
           {mockPages.map((page) => (
             <PageLink
